@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+
+{% block body %}
+    {% block stylesheets %}
+
+        {{ parent() }}
+
+         {% endblock %}
+
+    {% form_theme form 'bootstrap_4_layout.html.twig' %}
+
+    <div class="container mt-4">
+
+        <h1>Creer une publication</h1>
+
+        {{ include ('admin/_form.html.twig', {form: form, button: 'Creer'}) }}
+
+
+    </div>
+
+
+{% endblock %}

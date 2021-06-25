@@ -1,0 +1,80 @@
+{% extends 'base.html.twig' %}
+
+
+{% block stylesheets %}
+
+    {{ parent() }}
+
+{% endblock %}
+
+
+
+{% block body %}
+
+
+
+    <div class="container" >
+
+
+
+
+                <div class="card">
+                    <div class="card-body dim-card">
+                        <h5 class="card-title"><h>{{ publication.title  }}</h></h5>
+                        <p class="card-text "><b>{{  publication.content}}</b></p>
+                        <p class="card-text"><small class="text-muted"></small></p>
+                    </div>
+                    <img src="/images/publications/{{ publication.filename }}" class="card-img-top" alt="...">
+                    <div>
+
+
+                    </div>
+                </div><br/><br/>
+                <section id="commentaires">
+                    <h1>{{ publication.comments | length }}Commentaires:</h1>
+
+                      {% for comment  in publication.comments %}
+                         <div class="comment">
+                             <div class="row">
+                                 <div class="col-3">
+                                     {{ comment.author }}
+                                 </div>
+
+                                  <div class="col">
+                                  {{ comment.content | raw }}
+
+                                  </div>
+
+
+                             </div>
+
+                         </div>
+                    {% endfor %}
+
+                    {{ form_start(commentForm) }}
+                    {{ form_row(commentForm.author, {'attr': {'placeholder': "Votre nom"}}) }}
+                    {{ form_row(commentForm.content, {'attr': {'placeholder': "Votre commentaire"}}) }}
+                    <button type="submit" class="btn btn-success"> Commenter</button>
+                    {{ form_end(commentForm) }}
+                </section>
+
+
+
+
+
+
+
+
+
+        </div>
+
+
+
+
+
+    </div>
+
+
+
+
+{% endblock %}

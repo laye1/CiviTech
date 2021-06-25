@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+
+
+{% block stylesheets %}
+
+    {{ parent() }}
+
+
+{% endblock %}
+
+{% block body %}
+
+
+    <div class="container pub-dim " >
+
+        {% for publication in pubs %}
+
+            <div class="card">
+                <div class="card-body dim-card">
+                    <h5 class="card-title"><h>{{ publication.title  }}</h></h5>
+                    <p class="card-text "><b>{{  publication.content}}</b></p>
+                    <p class="card-text"><small class="text-muted"> </small></p>
+                </div>
+                <img src="/images/publications/{{ publication.filename }}" class="card-img-top" alt="...">
+                <div>
+                    <button type="button" class="btn-primary"><a href="{{path('pubs.show',{id: publication.id})}}">Participer</a></button>
+
+                </div>
+            </div><br/><br/>
+
+
+
+        {% endfor %}
+
+
+
+
+
+    </div>
+
+
+
+
+{% endblock %}

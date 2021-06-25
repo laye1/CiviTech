@@ -1,0 +1,15 @@
+
+
+
+
+    {{ form_start(form) }}
+
+    {{ form_row(form.title) }}
+    {{ form_row(form.content) }}
+    {{ form_row(form.imageFile) }}
+
+
+    {{ form_widget(form) }}
+
+    <button class="btn btn-primary">{{ button|default('Enregistrer') }}</button>
+    {{ form_end(form) }}

@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{% endblock %}
+
+{% block body %}
+
+<div class="container mt-4">
+
+<table class="table table-striped">
+    <thead>
+    <tr>
+        <th>Titre</th>
+        <th>Actions</th>
+    </tr>
+
+    </thead>
+    <tbody>
+    {% for publication in pubs %}
+    <tr>
+    <td>{{ publication.title }}</td>
+     <td>
+         <a href="{{ path('admin.pubs.edit',{id: publication.id}) }}" class="btn btn-secondary">Modifier</a>
+         <form method="post" action="{{ path('admin.pubs.delete',{id: publication.id}) }}", style="display: inline-block">
+             <input type="hidden" name="_method"  value="DELETE">
+             <button class="btn btn-danger">supprimer</button>
+         </form>
+     </td>
+    </tr>
+     {% endfor %}
+
+
+    </tbody>
+
+
+
+</table>
+
+ <div class="text-right">
+
+   <a href="{{ path('admin.pubs.new') }}" class="btn btn-primary">Nouveau</a>
+ </div>
+
+</div>
+{% endblock %}

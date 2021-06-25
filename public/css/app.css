@@ -1,0 +1,31 @@
+
+
+
+#conteneur-img{
+
+
+    border-color: white;
+    width: 100%;
+    height: 300px;
+
+}
+
+.img-dim{
+
+    width:100%;
+    height:100% ;
+   display: block;
+   background-image: url("diversity.jpg");
+
+
+
+}
+
+.pub-dim{
+
+ margin-top: 50px;
+
+}
+
+
+

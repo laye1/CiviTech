@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+
+
+{% block stylesheets %}
+    {{ parent() }}
+
+
+{% endblock %}
+
+{% block body %}
+
+    <div class="container mt-4">
+
+
+   <h1> Gerer les Publications </h1>
+
+        {{ include('admin/_form.html.twig', { button: 'Editer'}) }}
+
+    </div>
+
+
+
+{% endblock %}
